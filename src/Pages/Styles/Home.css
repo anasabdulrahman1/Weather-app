@@ -1,0 +1,196 @@
+  .main-ctr {
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+   @keyframes colorChange {
+    0% { color: #ff0000; } 
+    25% { color: #00ff00; } 
+    50% { color: #0000ff; } 
+    75% { color: #ffff00; } 
+    100% { color: #ff0000; } 
+  } 
+  
+  .multi-color-spinner {
+    animation: spin 2s infinite linear, colorChange 3s infinite ease-in-out;
+  }
+
+
+.home-btn {
+	color: inherit;
+	font-size: calc(0.8rem + 4vmin);
+	font-family: inherit;
+	border: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+	padding: var(--border-size);
+	display: flex;
+	width: max-content;
+	border-radius: var(--border-radius);
+	background-color: transparent;
+	background-image: conic-gradient(
+			from var(--border-angle-1) at 10% 15%,
+			transparent,
+			var(--bright-blue) 10%,
+			transparent 30%,
+			transparent
+		),
+		conic-gradient(
+			from var(--border-angle-2) at 70% 60%,
+			transparent,
+			var(--bright-green) 10%,
+			transparent 60%,
+			transparent
+		),
+		conic-gradient(
+			from var(--border-angle-3) at 50% 20%,
+			transparent,
+			var(--bright-red) 10%,
+			transparent 50%,
+			transparent
+		);
+	animation: 
+		rotateBackground 3s linear infinite,
+		rotateBackground2 8s linear infinite,
+		rotateBackground3 13s linear infinite;
+}
+
+ 
+@property --border-angle-1 {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+@property --border-angle-2 {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 90deg;
+}
+@property --border-angle-3 {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 180deg;
+}
+
+
+:root {
+  --bright-blue: rgb(0, 100, 255);
+  --bright-green: rgb(0, 255, 0);
+  --bright-red: rgb(255, 0, 0);
+  --background: black;
+  --foreground: white;
+  --border-size: 2px;
+  --border-radius: 0.75em;
+}
+
+
+@supports (color: color(display-p3 1 1 1)) {
+  :root {
+    --bright-blue: color(display-p3 0 0.2 1);
+    --bright-green: color(display-p3 0.4 1 0);
+    --bright-red: color(display-p3 1 0 0);
+  }
+}
+
+@keyframes rotateBackground {
+  to { --border-angle-1: 360deg; }
+}
+@keyframes rotateBackground2 {
+  to { --border-angle-2: -270deg; }
+}
+@keyframes rotateBackground3 {
+  to { --border-angle-3: 540deg; }
+}
+
+.home-btn {
+  --border-angle-1: 0deg;
+  --border-angle-2: 90deg;
+  --border-angle-3: 180deg;
+  color: inherit;
+  font-size: calc(0.8rem + 4vmin);
+  font-family: inherit;
+  border: 0;
+  padding: var(--border-size);
+  display: flex;
+  width: max-content;
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  background-image: conic-gradient(
+    from var(--border-angle-1) at 10% 15%,
+    transparent,
+    var(--bright-blue) 10%,
+    transparent 30%,
+    transparent
+  ),
+  conic-gradient(
+    from var(--border-angle-2) at 70% 60%,
+    transparent,
+    var(--bright-green) 10%,
+    transparent 60%,
+    transparent
+  ),
+  conic-gradient(
+    from var(--border-angle-3) at 50% 20%,
+    transparent,
+    var(--bright-red) 10%,
+    transparent 50%,
+    transparent
+  );
+  animation: 
+    rotateBackground 3s linear infinite,
+    rotateBackground2 8s linear infinite,
+    rotateBackground3 13s linear infinite;
+}
+
+.home-btn div {
+  background: var(--background); 
+  padding: 1em 1.5em;
+  border-radius: calc(var(--border-radius) - var(--border-size));
+  color: var(--foreground);
+}
+
+.loading-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .home-btn {
+    font-size: calc(0.8rem + 3vmin); 
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+  .home-btn {
+    font-size: calc(0.8rem + 2vmin); 
+  }
+}
+
+
+@media (max-width: 480px) {
+  .main-ctr {
+    padding: 10px;
+  }
+
+  .home-btn {
+    font-size: calc(0.8rem + 5vmin); 
+  }
+
+  .home-btn div {
+    padding: 0.8em 1.2em; 
+  }
+}
+
+

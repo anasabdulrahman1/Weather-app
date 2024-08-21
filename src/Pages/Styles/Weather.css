@@ -1,0 +1,285 @@
+
+
+ .app {
+    min-height: 100vh;
+    display: grid;
+    background-color: #e2d4ff;
+    padding: 20px; 
+}
+
+.weather {
+    place-self: center;
+    padding: 30px;
+    border-radius: 20px;
+    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%; 
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.search-bar input {
+    height: 45px; 
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    padding-left: 20px; 
+    color: #626262;
+    background: #ebfffc;
+    font-size: 18px; 
+}
+
+.search-bar img {
+    width: 45px; 
+    padding: 15px; 
+    border-radius: 50%;
+    background: #ebfffc;
+    cursor: pointer;
+}
+
+.weather-icon {
+    width: 150px; 
+    margin: 25px 0; 
+}
+
+.temperature {
+    color: #fff;
+    font-size: 70px; 
+    line-height: 1;
+}
+
+.city {
+    color: #fff;
+    font-size: 35px; 
+}
+
+.weather-data {
+    width: 100%;
+    margin-top: 25px; 
+    margin-bottom: 25px;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.weather-data .col {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px; 
+    font-size: 20px; 
+}
+
+.weather-data .col span {
+    display: block;
+    font-size: 16px; 
+}
+
+.weather-data .col img {
+    width: 25px; 
+    margin-top: 7px; 
+}
+
+.date {
+    color: #fff;
+    font-size: 18px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.day {
+    color: #fff;
+    font-size: 18px; 
+    margin-top: 10px;
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+.forecast {
+    display: flex;
+    padding: 25px; 
+    flex-direction: row;
+    gap: 25px; 
+    align-items: stretch;
+    justify-content: center;
+    background: #e2d4ff17;
+    border-radius: 20px;
+    flex-wrap: wrap;
+}
+
+.forecast-img img {
+    width: 70px; 
+}
+
+.days {
+    text-align: center;
+    font-size: 16px; 
+    color: #fff;
+    width: 120px; 
+    flex-grow: 1;
+}
+
+.days span {
+    font-size: 16px; 
+    color: #fff;
+}
+
+.error-msg{
+    color: #fff;
+}
+
+
+
+@media (max-width: 768px) {
+    .weather {
+        padding: 15px;
+    }
+
+    .search-bar input {
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .search-bar img {
+        width: 35px;
+        padding: 8px;
+    }
+
+    .weather-icon {
+        width: 100px;
+        margin: 15px 0;
+    }
+
+    .temperature {
+        font-size: 50px;
+    }
+
+    .city {
+        font-size: 25px;
+    }
+
+    .weather-data {
+        gap: 15px;
+    }
+
+    .weather-data .col {
+        font-size: 16px;
+    }
+
+    .weather-data .col span {
+        font-size: 12px;
+    }
+
+    .weather-data .col img {
+        width: 18px;
+    }
+
+    .date {
+        font-size: 14px;
+    }
+
+    .day {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .forecast {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .forecast-img img {
+        width: 50px;
+    }
+
+    .days {
+        font-size: 12px;
+        width: 80px;
+    }
+
+    .days span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .weather {
+        padding: 10px;
+    }
+
+    .search-bar input {
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .search-bar img {
+        width: 30px;
+        padding: 5px;
+    }
+
+    .weather-icon {
+        width: 80px;
+        margin: 10px 0;
+    }
+
+    .temperature {
+        font-size: 40px;
+    }
+
+    .city {
+        font-size: 20px;
+    }
+
+    .weather-data {
+        gap: 10px;
+    }
+
+    .weather-data .col {
+        font-size: 14px;
+    }
+
+    .weather-data .col span {
+        font-size: 10px;
+    }
+
+    .weather-data .col img {
+        width: 16px;
+    }
+
+    .date {
+        font-size: 12px;
+    }
+
+    .day {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .forecast {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .forecast-img img {
+        width: 40px;
+    }
+
+    .days {
+        font-size: 10px;
+        width: 60px;
+    }
+
+    .days span {
+        font-size: 10px;
+    }
+}
